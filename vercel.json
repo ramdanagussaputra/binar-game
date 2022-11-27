@@ -1,7 +1,7 @@
 {
     "version": 2,
     "name": "binar-game",
-    "build": [
+    "builds": [
         {
             "src": "./server.js",
             "use": "@vercel/node"
