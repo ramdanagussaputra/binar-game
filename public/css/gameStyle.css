@@ -1,0 +1,252 @@
+/* GENERAL USE */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 50%;
+}
+
+body {
+    background-color: rgb(112, 100, 81);
+    font-family: sans-serif;
+}
+
+/* HEADER */
+.header {
+    padding: 2.4rem;
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    margin-bottom: 2rem;
+}
+
+.icon,
+.title {
+    text-decoration: none;
+    font-size: 4.8rem;
+    color: brown;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    display: inline-block;
+}
+
+.title {
+    color: rgb(254, 194, 83);
+}
+
+/* ENTER ROOM */
+.enter-room {
+    display: block;
+}
+
+.room-btn-container {
+    max-width: 120rem;
+    padding: 12.8rem 3.2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4.8rem;
+}
+
+.btn--room {
+    width: 40%;
+    padding: 3.2rem;
+    background-color: brown;
+    font-size: 3.2rem;
+    color: rgb(254, 194, 83);
+    cursor: pointer;
+}
+
+/* GENERRATE ROOM */
+.generate-room,
+.join-room {
+    display: none;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.generate-room-container,
+.join-room-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
+}
+
+.generate-heading,
+.join-heading {
+    font-size: 5.2rem;
+    color: rgb(254, 194, 83);
+    padding: 3.2rem 0;
+}
+
+.generate-form,
+.join-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.generate-input,
+.join-input {
+    padding: 1.6rem 2.4rem;
+    font-size: 2rem;
+    width: 30%;
+    margin: 0;
+}
+
+.btn--create-room,
+.btn--join-room {
+    width: 10%;
+    font-size: 2rem;
+    background-color: brown;
+    color: rgb(254, 194, 83);
+    cursor: pointer;
+}
+
+.btn--cancel {
+    padding: 2.4rem 4.8rem;
+    font-size: 2rem;
+    background-color: brown;
+    color: rgb(254, 194, 83);
+    cursor: pointer;
+}
+
+/* GAME */
+.game {
+    display: none;
+    padding: 9.6rem 0;
+}
+
+.game-container {
+    max-width: 90rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    justify-items: center;
+    position: relative;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+}
+
+.player-text {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+}
+
+.img {
+    width: 12.8rem;
+    height: 12.8rem;
+    padding: 1.8rem;
+}
+
+.player--1 .img {
+    cursor: pointer;
+}
+
+.middle-text {
+    align-self: center;
+}
+
+.vs-text {
+    font-size: 12.8rem;
+    font-weight: 600;
+    color: red;
+}
+
+.win .vs-text {
+    display: none;
+}
+
+.winner-text {
+    display: none;
+}
+
+.win .winner-text {
+    text-transform: uppercase;
+    background-color: green;
+    color: white;
+    font-size: 4.8rem;
+    width: 34.5rem;
+    height: 15.8rem;
+    padding: 2.4rem 5.8rem;
+    border-radius: 9px;
+    transform: rotate(-45deg);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-refresh {
+    width: 4.8rem;
+    height: 4.8rem;
+
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    cursor: pointer;
+}
+
+.active {
+    background-color: #aaa;
+    border-radius: 9px;
+}
+
+.score-container {
+    position: absolute;
+    top: -4.4rem;
+}
+
+.score-header {
+    margin: 2rem 0 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+}
+
+.btn-score {
+    background-color: brown;
+    border: none;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-score:hover {
+    background-color: rgb(254, 194, 83);
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.4rem;
+    font-size: 8rem;
+}
+
+/* 
+---- Typography System (px) 
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+----  White Spacing System (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
+*/

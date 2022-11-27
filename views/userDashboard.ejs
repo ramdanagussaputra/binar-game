@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="css/userDashboardStyle.css" />
+
+        <script defer src="js/dashboard.js"></script>
+
+        <title>User Dashboard</title>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="heading-primary">User Dashboard</h1>
+
+            <a class="btn-user" href="/"> Homepage </a>
+        </header>
+
+        <div class="modal modal--hidden">
+            <div class="header-modal">
+                <h2 class="heading-secondary">Update User</h2>
+
+                <button class="btn-back">back</button>
+            </div>
+
+            <form class="form">
+                <div class="form-item">
+                    <label for="email" class="form-label">email</label>
+                    <input id="email" type="email" class="form-input" name="email" />
+                </div>
+
+                <div class="form-item">
+                    <label for="password" class="form-label">password</label>
+                    <input
+                        id="password"
+                        type="password"
+                        class="form-input"
+                        name="password"
+                    />
+                </div>
+
+                <div class="form-item">
+                    <label for="username" class="form-label">username</label>
+                    <input id="username" type="text" class="form-input" name="username" />
+                </div>
+
+                <button class="btn-update">Update</button>
+            </form>
+        </div>
+
+        <main>
+            <article class="table">
+                <p class="tab-head">email</p>
+                <p class="tab-head">password</p>
+                <p class="tab-head">username</p>
+                <p class="tab-head">biodata</p>
+                <p class="tab-head">history</p>
+                <p class="tab-head"></p>
+                <p class="tab-head"></p>
+
+                <% users.forEach(user => { %>
+
+                <p class="tab-body"><%= user.email %></p>
+                <p class="tab-body">*********</p>
+                <p class="tab-body"><%= user.username %></p>
+                <a
+                    class="tab-body tab-body--btn"
+                    href="/biodata-dashboard?id=<%= user.biodata._id %> "
+                >
+                    <div class="tab-btn biodata">biodata</div>
+                </a>
+                <a
+                    class="tab-body tab-body--btn"
+                    href="/history-dashboard?id=<%= user._id %> "
+                >
+                    <div class="tab-btn history">history</div>
+                </a>
+                <a class="tab-body tab-body--btn">
+                    <div class="tab-btn update" data-id="<%= user._id %>">update</div>
+                </a>
+                <a class="tab-body tab-body--btn">
+                    <div class="tab-btn delete" data-id="<%= user._id %>">delete</div>
+                </a>
+
+                <% }) %>
+            </article>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="css/biodataDashboardStyle.css" />
+
+        <script defer src="js/dashboard.js"></script>
+
+        <title>User Dashboard</title>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="heading-primary">Biodata Dashboard</h1>
+
+            <a class="btn-user" href="/user-dashboard"> User </a>
+        </header>
+
+        <div class="modal modal--hidden">
+            <div class="header-modal">
+                <h2 class="heading-secondary">Update Biodata</h2>
+
+                <button class="btn-back">back</button>
+            </div>
+
+            <form class="form">
+                <div class="form-item">
+                    <label for="firstName" class="form-label">first name</label>
+                    <input
+                        id="firstName"
+                        type="text"
+                        class="form-input"
+                        name="firstName"
+                    />
+                </div>
+
+                <div class="form-item">
+                    <label for="lastName" class="form-label">last name</label>
+                    <input id="lastName" type="text" class="form-input" name="lastName" />
+                </div>
+
+                <div class="form-item">
+                    <label for="age" class="form-label">age</label>
+                    <input id="age" type="number" class="form-input" name="age" />
+                </div>
+
+                <div class="form-item">
+                    <label for="born" class="form-label">born</label>
+                    <input id="born" type="date" class="form-input" name="born" />
+                </div>
+
+                <div class="form-item">
+                    <label for="gender" class="form-label">gender</label>
+                    <input id="gender" type="text" class="form-input" name="gender" />
+                </div>
+
+                <div class="form-item">
+                    <label for="address" class="form-label">address</label>
+                    <input id="address" type="text" class="form-input" name="address" />
+                </div>
+
+                <button class="btn-update">Update</button>
+            </form>
+        </div>
+
+        <main>
+            <article class="table">
+                <p class="tab-head">first name</p>
+                <p class="tab-head">last name</p>
+                <p class="tab-head">age</p>
+                <p class="tab-head">born</p>
+                <p class="tab-head">gender</p>
+                <p class="tab-head">address</p>
+                <p class="tab-head"></p>
+
+                <p class="tab-body"><%= biodata.firstName %></p>
+                <p class="tab-body"><%= biodata.lastName %></p>
+                <p class="tab-body"><%= biodata.age %></p>
+                <p class="tab-body"><%= biodata.born %></p>
+                <p class="tab-body"><%= biodata.gender %></p>
+                <p class="tab-body"><%= biodata.address %></p>
+                <a class="tab-body tab-body--btn">
+                    <div class="tab-btn update" data-id="<%= biodata._id %>">update</div>
+                </a>
+            </article>
+        </main>
+    </body>
+</html>

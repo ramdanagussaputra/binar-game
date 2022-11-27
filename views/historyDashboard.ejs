@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="css/historyDashboardStyle.css" />
+
+        <script defer src="js/dashboard.js"></script>
+
+        <title>User Dashboard</title>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="heading-primary">History Dashboard</h1>
+
+            <a class="btn-user" href="/user-dashboard"> User </a>
+        </header>
+
+        <div class="modal modal--hidden">
+            <div class="header-modal">
+                <h2 class="heading-secondary">Update History</h2>
+
+                <button class="btn-back">back</button>
+            </div>
+
+            <form class="form">
+                <div class="form-item">
+                    <label for="win" class="form-label">win</label>
+                    <input id="win" type="number" class="form-input" name="win" />
+                </div>
+
+                <div class="form-item">
+                    <label for="lose" class="form-label">lose</label>
+                    <input id="lose" type="number" class="form-input" name="lose" />
+                </div>
+
+                <div class="form-item">
+                    <label for="draw" class="form-label">draw</label>
+                    <input id="draw" type="number" class="form-input" name="draw" />
+                </div>
+
+                <div class="form-item">
+                    <label for="date" class="form-label">date</label>
+                    <input
+                        id="date"
+                        type="datetime-local"
+                        class="form-input"
+                        name="date"
+                    />
+                </div>
+
+                <button class="btn-update">Update</button>
+            </form>
+        </div>
+
+        <main>
+            <article class="table">
+                <p class="tab-head">win</p>
+                <p class="tab-head">lose</p>
+                <p class="tab-head">draw</p>
+                <p class="tab-head">date</p>
+                <p class="tab-head"></p>
+
+                <% histories.forEach(history => { %>
+                <p class="tab-body"><%= history.win %></p>
+                <p class="tab-body"><%= history.lose %></p>
+                <p class="tab-body"><%= history.draw %></p>
+                <p class="tab-body"><%= history.date %></p>
+                <a class="tab-body tab-body--btn">
+                    <div class="tab-btn update" data-id="<%= history._id %>">update</div>
+                </a>
+                <% }) %>
+            </article>
+        </main>
+    </body>
+</html>

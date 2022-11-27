@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 50%;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url('../img/the-games-bg.jpg');
+}
+
+article {
+    padding: 0 9.6rem;
+}
+
+.register-form {
+    max-width: 100rem;
+    background-color: black;
+    color: orange;
+    padding: 3.2rem;
+    margin: 9.6rem auto;
+    border-radius: 9px;
+    box-shadow: 10px 10px 60px 5px;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    margin: 2.4rem 0 4.8rem;
+    text-transform: uppercase;
+    font-size: 4.8rem;
+    letter-spacing: 1px;
+}
+
+.btn-close {
+    position: absolute;
+    color: rgb(226, 147, 1);
+    font-size: 4.8rem;
+    top: 2%;
+    right: 5%;
+    transition: all 0.3s;
+}
+
+.btn-close:hover {
+    color: rgb(177, 116, 4);
+}
+
+.form {
+    max-width: 65rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-label {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+}
+
+input {
+    height: 4.8rem;
+    width: 100%;
+    padding: 1rem;
+    font-size: 2.4rem;
+}
+
+.form-input--gender {
+    width: 2rem;
+    height: 2rem;
+}
+
+.form-label--gender {
+    text-transform: capitalize;
+    margin-right: 1rem;
+}
+
+.form-item--name {
+    flex-direction: row;
+}
+
+.form-item--name label {
+    display: inline-block;
+    margin-bottom: 1.2rem;
+}
+
+.form-age {
+    flex-basis: 20%;
+}
+
+.form-born {
+    flex-grow: 1;
+}
+
+.form-name {
+    flex: 1 1 50%;
+}
+
+.form-gender {
+    display: flex;
+    gap: 2.4rem;
+}
+
+textarea {
+    resize: vertical;
+    height: 8rem;
+    font-size: 2.4rem;
+    padding: 1rem;
+}
+
+.btn-form {
+    text-transform: uppercase;
+    width: 70%;
+    height: 6.4rem;
+    margin: 3.2rem auto;
+    font-size: 2.4rem;
+    font-weight: 600;
+    background-color: rgb(226, 147, 1);
+    border-radius: 9px;
+    box-shadow: inset 0 0 20px 0.1px rgba(0, 0, 0, 0.452);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn-form:hover {
+    background-color: rgb(179, 116, 0);
+}

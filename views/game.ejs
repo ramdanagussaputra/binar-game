@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Challenge Chapter 4 FSW - Ramdan Agus Saputra</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/gameStyle.css" />
+        <link rel="stylesheet" href="css/gameQueries.css" />
+
+        <!-- JavaScript -->
+        <script
+            defer
+            src="https://kit.fontawesome.com/2613e9e9dd.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+            integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+            crossorigin="anonymous"
+        ></script>
+
+        <script defer type="module" src="js/game.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <a href="/" class="icon fa-solid fa-angle-left"></a>
+            <i class="icon fa-solid fa-gamepad"></i>
+            <h1 class="title">rock paper scissors</h1>
+        </header>
+
+        <article class="enter-room">
+            <section class="room-btn-container">
+                <button class="btn--room btn--room--generate-room">Generate Room</button>
+                <button class="btn--room btn--room--Join-room">Join Room</button>
+            </section>
+        </article>
+
+        <article class="generate-room">
+            <section class="generate-room-container">
+                <h2 class="generate-heading">Create a Room</h2>
+
+                <form class="generate-form">
+                    <input class="generate-input" type="text" />
+                    <button type="submit" class="btn--create-room">Create</button>
+                </form>
+
+                <button class="btn--cancel">Cancel</button>
+            </section>
+        </article>
+
+        <article class="join-room">
+            <section class="join-room-container">
+                <h2 class="join-heading">Join a Room</h2>
+
+                <form class="join-form">
+                    <input class="join-input" type="text" />
+                    <button type="submit" class="btn--join-room">Join</button>
+                </form>
+
+                <button class="btn--cancel">Cancel</button>
+            </section>
+        </article>
+
+        <article class="game">
+            <div class="game-container">
+                <section class="player player--1">
+                    <p class="player-text player-text--you">You</p>
+                    <img class="img p1-rock p1" src="img/batu.webp" alt="batu" />
+                    <img class="img p1-paper p1" src="img/kertas.webp" alt="kertas" />
+                    <img class="img p1-scissor p1" src="img/gunting.webp" alt="gunting" />
+                </section>
+
+                <section class="score-container">
+                    <!-- <div class="score-header">
+                        <button class="btn-score">Save Score</button>
+                    </div> -->
+                    <div class="score">
+                        <p class="score-player">0</p>
+                        <p>-</p>
+                        <p class="score-com">0</p>
+                    </div>
+                </section>
+
+                <section class="middle-text">
+                    <p class="winner-text">player 1 win</p>
+                    <p class="vs-text">VS</p>
+                </section>
+
+                <section class="player player--com">
+                    <p class="player-text player-text--enemy">Waiting the enemy</p>
+                    <img class="img com-rock" src="img/batu.webp" alt="batu" />
+                    <img class="img com-paper" src="img/kertas.webp" alt="kertas" />
+                    <img class="img com-scissor" src="img/gunting.webp" alt="gunting" />
+                </section>
+
+                <img class="img-refresh" src="img/refresh.webp" alt="refresh" />
+            </div>
+        </article>
+    </body>
+</html>

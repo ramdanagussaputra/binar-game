@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="css/signupStyle.css" />
+        <link rel="stylesheet" href="css/signupQueries.css" />
+
+        <script defer src="js/signup.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <article>
+            <section class="register-form">
+                <h1>create account</h1>
+
+                <a href="/">
+                    <i class="btn-close fa-solid fa-square-xmark"></i>
+                </a>
+
+                <form class="form">
+                    <div class="form-item">
+                        <label for="email" class="form-label">email</label>
+                        <input id="email" type="text" name="email" required />
+                    </div>
+
+                    <div class="form-item">
+                        <label for="email" class="form-label">password</label>
+                        <input id="password" type="password" name="password" required />
+                    </div>
+
+                    <div class="form-item">
+                        <label for="username" class="form-label">username</label>
+                        <input id="username" type="text" name="username" required />
+                    </div>
+
+                    <div class="form-item form-item--name">
+                        <div class="form-name">
+                            <label for="firstName" class="form-label">first name</label>
+                            <input id="firstName" type="text" name="firstName" required />
+                        </div>
+
+                        <div class="form-name">
+                            <label for="lastName" class="form-label">last name</label>
+                            <input id="lastName" type="text" name="lastName" required />
+                        </div>
+                    </div>
+
+                    <div class="form-item form-item--name">
+                        <div class="form-age">
+                            <label for="username" class="form-label">age</label>
+                            <input id="age" type="text" name="age" required />
+                        </div>
+
+                        <div class="form-born">
+                            <label for="born" class="form-label">Born</label>
+                            <input id="born" type="date" name="born" required />
+                        </div>
+                    </div>
+
+                    <div class="form-item form-item--gender">
+                        <label for="gender" class="form-label">gender</label>
+
+                        <div class="form-gender">
+                            <div>
+                                <label
+                                    class="form-label form-label--gender"
+                                    for="male"
+                                    class="form-label"
+                                    >male</label
+                                >
+                                <input
+                                    class="form-input--gender"
+                                    id="male"
+                                    type="radio"
+                                    name="gender"
+                                    value="male"
+                                    required
+                                />
+                            </div>
+
+                            <div>
+                                <label
+                                    class="form-label form-label--gender"
+                                    for="female"
+                                    class="form-label"
+                                    >female</label
+                                >
+                                <input
+                                    class="form-input--gender"
+                                    id="female"
+                                    type="radio"
+                                    name="gender"
+                                    value="female"
+                                    required
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea name="address" id="address" required></textarea>
+                    </div>
+
+                    <button class="btn-form">create</button>
+                </form>
+            </section>
+        </article>
+    </body>
+</html>

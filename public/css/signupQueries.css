@@ -1,0 +1,32 @@
+@media (max-width: 43.75em) {
+    html {
+        font-size: 43.75%;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 34.37em) {
+    html {
+        font-size: 31.25%;
+    }
+
+    h1 {
+        font-size: 3.8rem;
+    }
+
+    .form-item--name {
+        flex-direction: column;
+        gap: 3.2rem;
+    }
+
+    .form-name:last-child {
+        margin-bottom: 0;
+    }
+
+    .form-label {
+        font-size: 2rem;
+    }
+}
