@@ -2,10 +2,16 @@ const serverSocket = require('socket.io');
 const roomsGame = require('../utils/roomsGame');
 const userGame = require('../utils/usersGame');
 
+const socketPort = process.env.PORT || 3000;
+const origin =
+    process.env.NODE_ENV === 'production'
+        ? 'https://binar-game-ramdan.herokuapp.com/'
+        : 'http://localhost:7000';
+
 module.exports = () => {
-    const io = serverSocket(3000, {
+    const io = serverSocket(socketPort, {
         cors: {
-            origin: ['http://localhost:7000'],
+            origin: [origin],
         },
     });
 
