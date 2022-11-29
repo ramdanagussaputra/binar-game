@@ -28,7 +28,7 @@ const rockEnemy = document.querySelector('.com-rock');
 const paperEnemy = document.querySelector('.com-paper');
 const scissorEnemy = document.querySelector('.com-scissor');
 
-const socket = io('http://localhost:3000');
+const socket = io.connect();
 
 class CreateJoinRoom {
     roomId;

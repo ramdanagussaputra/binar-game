@@ -21,12 +21,12 @@ dotenv.config({ path: './config.env' });
 })();
 
 // START SERVER
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 7000;
 const server = app.listen(port, () =>
     console.log(`Server running on: http://localhost:${port}`)
 );
 
-activateSocket();
+activateSocket(process.env.NODE_ENV, server);
 
 process.on('unhandledRejection', (err) => {
     console.error(err.name, err.message);
