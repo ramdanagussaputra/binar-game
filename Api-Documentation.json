@@ -9,8 +9,12 @@
     },
     "servers": [
         {
-            "url": "https://binar-game-ramdan.herokuapp.com/",
+            "url": "http://localhost:7000/",
             "description": "Development ENV"
+        },
+        {
+            "url": "https://binar-game-ramdan.herokuapp.com/",
+            "description": "Production ENV"
         }
     ],
     "tags": [
