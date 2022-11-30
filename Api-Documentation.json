@@ -1,0 +1,671 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Binar Game API",
+    "contact": {
+      "email": "ramdanaguss@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:7000",
+      "description": "Development ENV"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Authentication",
+      "description": "All about authentication"
+    },
+    {
+      "name": "User",
+      "description": "User CRUD"
+    },
+    {
+      "name": "Biodata",
+      "description": "Complete user biodata"
+    },
+    {
+      "name": "History",
+      "description": "User game history"
+    }
+  ],
+  "paths": {
+    "/api/user-game/signup": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "User sign up",
+        "operationId": "signup",
+        "requestBody": {
+          "description": "Create new user",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignUp"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/api/user-game/login": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "User login",
+        "operationId": "login",
+        "requestBody": {
+          "description": "user login",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/api/user-game": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get all users",
+        "operationId": "getAllUsers",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create user",
+        "operationId": "create user",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "Create new user",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FullUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/api/user-game/{userId}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get one user by id",
+        "operationId": "getOneUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update user",
+        "operationId": "updateUser",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Create new user",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BasicUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Delete user",
+        "operationId": "deleteUser",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/api/user-game-biodata": {
+      "get": {
+        "tags": [
+          "Biodata"
+        ],
+        "summary": "Get all biodata",
+        "operationId": "getAllBiodata",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Biodata"
+        ],
+        "summary": "Create biodata",
+        "operationId": "create biodata",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "Create new biodata",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Biodata"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/api/user-game-biodata/{biodataId}": {
+      "patch": {
+        "tags": [
+          "Biodata"
+        ],
+        "summary": "Update biodata",
+        "operationId": "updateBiodata",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "biodataId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Update biodata",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Biodata"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Biodata"
+        ],
+        "summary": "Delete Biodata",
+        "operationId": "deleteBiodata",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "biodataId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/api/user-game-history": {
+      "get": {
+        "tags": [
+          "History"
+        ],
+        "summary": "Get all history",
+        "operationId": "getAllHistory",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/api/user-game-history/{historyId}": {
+      "patch": {
+        "tags": [
+          "History"
+        ],
+        "summary": "Update history",
+        "operationId": "updateHistory",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "historyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Update history",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/History"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "History"
+        ],
+        "summary": "Delete history",
+        "operationId": "deleteHistory",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "historyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/api/user-game/{userId}/history": {
+      "get": {
+        "tags": [
+          "History"
+        ],
+        "summary": "Get user history on user",
+        "operationId": "getUserHistoryOnUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "History"
+        ],
+        "summary": "Create history on user",
+        "operationId": "createHistoryOnUser",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Create new user",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/History"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SignUp": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "user@gmail.com"
+          },
+          "password": {
+            "type": "string",
+            "example": "strongpassword1234"
+          },
+          "username": {
+            "type": "string",
+            "example": "username123"
+          },
+          "firstName": {
+            "type": "string",
+            "example": "test"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "name"
+          },
+          "age": {
+            "type": "integer",
+            "example": 18
+          },
+          "born": {
+            "type": "string",
+            "example": "2005-11-20T00:00:00.000Z"
+          },
+          "gender": {
+            "type": "string",
+            "example": "male"
+          },
+          "address": {
+            "type": "string",
+            "example": "Lembang, Kab. Bandung Barat"
+          }
+        }
+      },
+      "Login": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "ramdanaguss16"
+          },
+          "password": {
+            "type": "string",
+            "example": 1111
+          }
+        }
+      },
+      "FullUser": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "user@gmail.com"
+          },
+          "password": {
+            "type": "string",
+            "example": "strongpassword1234"
+          },
+          "username": {
+            "type": "string",
+            "example": "username123"
+          },
+          "firstName": {
+            "type": "string",
+            "example": "test"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "name"
+          },
+          "age": {
+            "type": "integer",
+            "example": 18
+          },
+          "born": {
+            "type": "string",
+            "example": "2005-11-20T00:00:00.000Z"
+          },
+          "gender": {
+            "type": "string",
+            "example": "male"
+          },
+          "address": {
+            "type": "string",
+            "example": "Lembang, Kab. Bandung Barat"
+          },
+          "role": {
+            "type": "integer",
+            "example": 1
+          }
+        }
+      },
+      "BasicUser": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "user@gmail.com"
+          },
+          "password": {
+            "type": "string",
+            "example": "strongpassword1234"
+          },
+          "username": {
+            "type": "string",
+            "example": "username123"
+          }
+        }
+      },
+      "Biodata": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "example": "test"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "name"
+          },
+          "age": {
+            "type": "integer",
+            "example": 18
+          },
+          "born": {
+            "type": "string",
+            "example": "2005-11-20T00:00:00.000Z"
+          },
+          "gender": {
+            "type": "string",
+            "example": "male"
+          },
+          "address": {
+            "type": "string",
+            "example": "Lembang, Kab. Bandung Barat"
+          }
+        }
+      },
+      "History": {
+        "type": "object",
+        "properties": {
+          "win": {
+            "type": "integer",
+            "example": 9
+          },
+          "lose": {
+            "type": "integer",
+            "example": 0
+          },
+          "draw": {
+            "type": "integer",
+            "example": 2
+          },
+          "date": {
+            "type": "string",
+            "example": "2022-09-02"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

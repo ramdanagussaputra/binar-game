@@ -10,6 +10,8 @@ const biodataRouter = require('./routes/biodataRoutes');
 const historyRouter = require('./routes/historyRoutes');
 const globalErrorHandler = require('./controller/errorController');
 const AppError = require('./utils/appError');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDoc = require('./Api-Documentation.json');
 
 const app = express();
 
@@ -34,6 +36,7 @@ app.use(mongoSanitize());
 
 app.use(xss());
 
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.use('/api/user-game', userRouter);
 app.use('/api/user-game-biodata', biodataRouter);
 app.use('/api/user-game-history', historyRouter);
